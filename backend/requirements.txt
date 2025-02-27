@@ -1,0 +1,12 @@
+Flask==2.3.3
+Flask-Cors==4.0.0
+feedparser==6.0.10
+requests==2.31.0
+SQLAlchemy==2.0.22
+python-dotenv==1.0.0
+gunicorn==21.2.0
+beautifulsoup4==4.12.2
+lxml==4.9.3
+lxml_html_clean==0.4.1
+readability-lxml==0.8.1
+html2text==2020.1.16

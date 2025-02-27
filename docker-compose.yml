@@ -1,0 +1,30 @@
+version: '3.8'
+
+services:
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    ports:
+      - "8080:80"
+    depends_on:
+      - backend
+    environment:
+      - VITE_API_URL=/api
+    restart: unless-stopped
+
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    ports:
+      - "5000:5000"
+    volumes:
+      - sqlite_data:/app/instance
+    environment:
+      - FLASK_APP=app.app
+      - SECRET_KEY=change_this_in_production
+    restart: unless-stopped
+
+volumes:
+  sqlite_data:
